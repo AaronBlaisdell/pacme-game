@@ -1,0 +1,74 @@
+diff --git a/pacme/index.html b/pacme/index.html
+new file mode 100644
+index 0000000000000000000000000000000000000000..37b45b86ea1e201a76833972adf858977ba83b4c
+--- /dev/null
++++ b/pacme/index.html
+@@ -0,0 +1,68 @@
++<!DOCTYPE html>
++<html lang="en">
++  <head>
++    <meta charset="UTF-8" />
++    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++    <title>Pacme</title>
++    <link rel="stylesheet" href="styles.css" />
++  </head>
++  <body>
++    <main class="layout">
++      <section class="panel controls">
++        <h1>Pacme</h1>
++        <p class="subtitle">
++          Classic Pacman gameplay with your face as the hero and custom faces for ghosts.
++        </p>
++
++        <div class="uploader" id="uploader-list"></div>
++
++        <div class="button-row">
++          <button id="start-game">Start / Restart</button>
++          <button id="pause-game">Pause</button>
++        </div>
++
++        <ul class="legend">
++          <li><strong>Move:</strong> Arrow keys or WASD</li>
++          <li><strong>Goal:</strong> Eat all pellets and avoid ghosts</li>
++          <li><strong>Lives:</strong> 3</li>
++        </ul>
++
++        <div class="hud-text">
++          <p>Score: <span id="score">0</span></p>
++          <p>Lives: <span id="lives">3</span></p>
++          <p>Status: <span id="status">Ready</span></p>
++        </div>
++      </section>
++
++      <section class="panel game-panel">
++        <canvas id="game" width="560" height="620" aria-label="Pacme game board"></canvas>
++      </section>
++    </main>
++
++    <dialog id="crop-modal">
++      <form method="dialog" class="cropper-form">
++        <h2 id="crop-title">Crop face</h2>
++        <p>Adjust to frame the face, then save avatar.</p>
++        <canvas id="crop-canvas" width="420" height="420"></canvas>
++        <label>
++          Zoom
++          <input id="zoom-range" type="range" min="1" max="3" step="0.01" value="1" />
++        </label>
++        <label>
++          Horizontal
++          <input id="x-range" type="range" min="0" max="1" step="0.001" value="0.5" />
++        </label>
++        <label>
++          Vertical
++          <input id="y-range" type="range" min="0" max="1" step="0.001" value="0.5" />
++        </label>
++        <menu>
++          <button value="cancel" type="reset">Cancel</button>
++          <button id="save-crop" value="default">Save avatar</button>
++        </menu>
++      </form>
++    </dialog>
++
++    <script src="script.js"></script>
++  </body>
++</html>
