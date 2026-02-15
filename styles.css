@@ -1,0 +1,171 @@
+diff --git a/pacme/styles.css b/pacme/styles.css
+new file mode 100644
+index 0000000000000000000000000000000000000000..a9d4ef77c29a36dd48d060dee9bd8e3337bec94b
+--- /dev/null
++++ b/pacme/styles.css
+@@ -0,0 +1,165 @@
++:root {
++  color-scheme: dark;
++  --bg: #0a0a12;
++  --panel: #151527;
++  --accent: #ffde59;
++  --danger: #ff5f7a;
++  --ok: #6fe5a0;
++}
++
++* {
++  box-sizing: border-box;
++}
++
++body {
++  margin: 0;
++  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
++  background: radial-gradient(circle at top, #181836 0%, #08080f 70%);
++  color: #f5f5fb;
++}
++
++.layout {
++  max-width: 1180px;
++  margin: 1.5rem auto;
++  display: grid;
++  grid-template-columns: minmax(300px, 360px) 1fr;
++  gap: 1rem;
++  padding: 0 1rem;
++}
++
++.panel {
++  background: var(--panel);
++  border: 1px solid #2f2f4e;
++  border-radius: 16px;
++  padding: 1rem;
++}
++
++.subtitle {
++  color: #c1c1d8;
++  line-height: 1.4;
++}
++
++.uploader {
++  display: grid;
++  gap: 0.6rem;
++  margin: 1rem 0;
++}
++
++.upload-item {
++  background: #1e1e33;
++  border: 1px solid #33335b;
++  border-radius: 12px;
++  padding: 0.6rem;
++  display: grid;
++  grid-template-columns: 58px 1fr;
++  gap: 0.6rem;
++  align-items: center;
++}
++
++.avatar-preview {
++  width: 56px;
++  height: 56px;
++  border-radius: 50%;
++  border: 2px solid #4e4e78;
++  object-fit: cover;
++  background: #111;
++}
++
++.upload-item label {
++  font-size: 0.85rem;
++  color: #d4d4ed;
++}
++
++.upload-item input {
++  width: 100%;
++}
++
++button {
++  border: none;
++  border-radius: 10px;
++  padding: 0.55rem 0.8rem;
++  font-weight: 700;
++  cursor: pointer;
++}
++
++#start-game {
++  background: var(--accent);
++  color: #1d1d1d;
++}
++
++#pause-game {
++  background: #2f2f50;
++  color: #fff;
++}
++
++.button-row {
++  display: flex;
++  gap: 0.6rem;
++}
++
++.legend {
++  padding-left: 1.2rem;
++  color: #c5c5e0;
++  font-size: 0.92rem;
++}
++
++.hud-text p {
++  margin: 0.25rem 0;
++}
++
++#status.win {
++  color: var(--ok);
++}
++
++#status.lose {
++  color: var(--danger);
++}
++
++.game-panel {
++  display: grid;
++  place-items: center;
++}
++
++#game {
++  width: 100%;
++  max-width: 560px;
++  border-radius: 10px;
++  border: 2px solid #313153;
++  background: #080816;
++}
++
++#crop-modal {
++  width: min(560px, 92vw);
++  border: 1px solid #4e4e70;
++  border-radius: 12px;
++  background: #141422;
++  color: #fff;
++}
++
++.cropper-form {
++  display: grid;
++  gap: 0.6rem;
++}
++
++#crop-canvas {
++  width: 100%;
++  max-width: 420px;
++  justify-self: center;
++  border-radius: 10px;
++  border: 1px solid #3f3f62;
++  background: #0b0b12;
++}
++
++menu {
++  display: flex;
++  justify-content: flex-end;
++  gap: 0.5rem;
++  padding: 0;
++  margin: 0.4rem 0 0;
++}
++
++@media (max-width: 900px) {
++  .layout {
++    grid-template-columns: 1fr;
++  }
++}
